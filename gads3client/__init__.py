@@ -1,12 +1,12 @@
-from contextlib import asynccontextmanager
-from enum import Enum
-from typing import Optional
+import contextlib
+import enum
+import typing
 
 import aioboto3
 import aiofiles
 
 
-class Mimetype(str, Enum):
+class Mimetype(str, enum.Enum):
     png = "image/png"
     jpeg = "image/jpeg"
     jpg = "image/jpeg"
@@ -97,7 +97,7 @@ class S3:
         self.aws_access_key_id = aws_access_key_id
         self.aws_secret_access_key = aws_secret_access_key
 
-    @asynccontextmanager
+    @contextlib.asynccontextmanager
     async def client(self):
         async with aioboto3.Session().client(
             "s3",
@@ -107,7 +107,7 @@ class S3:
         ) as _client:
             yield _client
 
-    def url(self, filename: str, mimetype: Mimetype, storage: str, host: Optional[str] = None) -> str:
+    def url(self, filename: str, mimetype: Mimetype, storage: str, host: typing.Optional[str] = None) -> str:
         return f"{host if host else self.endpoint_url}/{self.bucket}/{self.path(filename, mimetype, storage)}"
 
     @classmethod
