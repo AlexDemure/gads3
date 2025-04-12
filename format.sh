@@ -1,2 +1,2 @@
-isort gads3client/
-ruff format gads3client/ --no-cache
+isort gads3/
+ruff format gads3/ --no-cache

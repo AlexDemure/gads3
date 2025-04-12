@@ -1,6 +1,6 @@
 <p align="center">
-  <a href="https://github.com/AlexDemure/gads3client">
-    <a href="https://ibb.co/pjdb4qpr"><img src="https://i.ibb.co/KxWbVnHz/logo.png" alt="logo" border="0"></a>
+  <a href="https://github.com/AlexDemure/gads3">
+    <a href="https://ibb.co/8ghgbtdJ"><img src="https://i.ibb.co/xq4qYdfy/logo.png" alt="logo" border="0"></a>
   </a>
 </p>
 
@@ -10,16 +10,16 @@
 
 ---
 
-## Installation
+### Installation
 
 ```
-pip install gads3client
+pip install gads3
 ```
 
-## Usage
+### Usage
 
 ```sh
-from gads3client import S3, Mimetype
+from gads3 import S3, Mimetype
 
 s3 = S3(
     bucket="media",
